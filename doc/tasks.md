@@ -6,9 +6,9 @@
 
 `a href` indicates the file name so we can move the files once all downloads complete.
 
-## Consider implementing OTP with the GitHub seed to be able to derive 2FA code myself
+## Consider implementing OTP with the GitHub seed to be able to derive 2FA code
 
-If successful, this can be made fully automatic.
+If successful, this sript can be made fully automatic.
 
 ## Follow along with the headless download issue
 
