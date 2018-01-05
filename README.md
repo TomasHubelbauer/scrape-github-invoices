@@ -23,6 +23,10 @@ node --experimental-modules index.mjs
 # Find invoices in the Downloads directory
 ```
 
+## Licensing
+
+This project is licensed under the terms of the [MIT license](LICENSE.md).
+
 ## Contributing
 
 See [development plan](doc/tasks.md).
