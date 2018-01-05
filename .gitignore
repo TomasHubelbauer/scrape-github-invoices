@@ -1,0 +1,3 @@
+node_modules
+# Fill in the user name and passphrase here as seen in README.md
+secrets.mjs

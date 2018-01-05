@@ -15,7 +15,10 @@ Obviously a dedicated API would be much more straightforward and much less error
 - Node 9.0.3+
 - Yarn 1.0.0+
 
-`node --experimental-modules index.mjs`
+```sh
+echo "export default { userName: '', passphrase: '' }" > secrets.mjs # Git ignored
+node --experimental-modules index.mjs
+```
 
 ## Contributing
 
