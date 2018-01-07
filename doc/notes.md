@@ -2,6 +2,36 @@
 
 > Development log
 
+## 2017-01-07 continued
+
+Inspected how to approach redireting downloads to a specific directory.
+
+### `await page._client.send('Page.setDownloadBehavior', …)`
+
+Puppeteer doesn't yet support the
+[`setDownloadBehavior`](https://chromedevtools.github.io/devtools-protocol/tot/Page/#method-setDownloadBehavior)
+Chrome DevTools protocol method, but we can invoke it like this:
+
+```js
+await page._client.send('Page.setDownloadBehavior', {behavior: 'allow', downloadPath: './'})
+```
+
+Unfortunately for me it returns *Error - path too long*,
+[as I've commented on the issue](https://github.com/GoogleChrome/puppeteer/issues/299#issuecomment-355829205).
+
+- [Puppeteer issue](https://github.com/GoogleChrome/puppeteer/issues/299)
+- [Chromium issue](https://bugs.chromium.org/p/chromium/issues/detail?id=696481)
+
+### `--profile-directory` launch argument
+
+This might work, but it requires the profile directory to be set up beforehand, the set up screen cannot be
+automated with Puppeteer (as far as I can tell, it won't allow DevTools to be shown), and the script will fail
+with an empty profile directory because `browser.pages` is empty, so no `page`.
+
+The profile directory could be prepared and then versioned for copying to the destination directory, where
+all non-downloaded files could then be removed, leaving us with *just* the downloaded files, but that's too
+awkward to do. Not worth the effort.
+
 ## 2018-01-07
 
 Implemented generating a TOTP token from a shared secret key obtained from GitHub 2FA settings page and
