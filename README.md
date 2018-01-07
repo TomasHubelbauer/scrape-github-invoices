@@ -8,6 +8,12 @@ from [the billing page in account settings](https://github.com/settings/billing)
 Obviously a dedicated API would be much more straightforward and much less error-prone, but until we have that
 (and for non-enterprise users also), this is still much better than a manual process.
 
+**Features:**
+
+- Download all invoices to the Downloads directory
+- ([In development](doc/tasks.md)) Sign in using user name, passphrase and 2 factor authentication is automatic
+- ([In development](doc/tasks.md)) Move invoices to a given directory after download has completed
+
 ## Running
 
 **Prerequisites:**
