@@ -32,6 +32,12 @@ The profile directory could be prepared and then versioned for copying to the de
 all non-downloaded files could then be removed, leaving us with *just* the downloaded files, but that's too
 awkward to do. Not worth the effort.
 
+### `fetch(…, { creentials: 'include' })`
+
+In some instances, possibly including this one, we could use the browser JavaScript context to `fetch` the
+file and pass along the response, but I won't attempt this, because it's not nice enough. Besides, I like seeing
+the links be clicked and the page scrolled as they are so, where this would make that no longer visible.
+
 ## 2018-01-07
 
 Implemented generating a TOTP token from a shared secret key obtained from GitHub 2FA settings page and
