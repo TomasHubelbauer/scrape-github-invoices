@@ -1,4 +1,5 @@
 import puppeteer from 'puppeteer';
+import speakeasy from 'speakeasy';
 import secrets from './secrets';
 
 async function run() {
@@ -14,13 +15,17 @@ async function run() {
 	await page.click('input[type=submit]');
 	console.log('Submitted the login form.');
 
-	// Let the user fill in the credentials and the 2FA code.
+	await page.waitForSelector('#otp'); // This is AJAX navigation.
+	await page.focus('#otp');
+	await page.keyboard.type(speakeasy.totp({ secret: secrets.totpSecret }));
+	await page.click('button[type=submit]');
+	console.log('Filled in the TOTP token.');
+
 	await page.waitForSelector('.billing-section');
 	console.log('Entered the billing section.');
 
 	const downloadAs = await page.$$('.boxed-group-table > tbody > tr a');
 	console.log(`Found ${downloadAs.length} invoice download links.`);
-
 	for (const downloadA of downloadAs) {
 		await downloadA.click();
 	}

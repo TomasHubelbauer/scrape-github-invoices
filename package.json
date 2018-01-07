@@ -5,7 +5,11 @@
   "repository": "https://github.com/TomasHubelbauer/scrape-github-invoices.git",
   "author": "Tomáš Hübelbauer <tomas@hubelbauer.net>",
   "license": "MIT",
+  "scripts": {
+    "start": "node --experimental-modules index.mjs"
+  },
   "dependencies": {
-    "puppeteer": "^0.13.0"
+    "puppeteer": "^0.13.0",
+    "speakeasy": "^2.0.0"
   }
 }

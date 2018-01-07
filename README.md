@@ -18,7 +18,7 @@ Obviously a dedicated API would be much more straightforward and much less error
 ```sh
 # Fill in your details or leave fields blank in order to type them in yourself
 echo "export default { userName: '', passphrase: '' }" > secrets.mjs # Git ignored
-node --experimental-modules index.mjs
+yarn start
 # Enter the GitHub 2FA code
 # Find invoices in the Downloads directory
 ```

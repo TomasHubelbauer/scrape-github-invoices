@@ -2,13 +2,17 @@
 
 > Development plan
 
+## Figure out why SpeakEasy TOTP token doesn't match Authenticator token
+
+Google Authenticator and Microsoft Authenticator, when set up using the same secret as
+SpeakEasy, both give matching and working tokens, but SpeakEasy gives a different, broken
+token which doesn't seems to be too old or too new, just completely different.
+
+[The GitHub issue](https://github.com/speakeasyjs/speakeasy/issues/102).
+
 ## Move downloaded invoices to a given directory
 
 `a href` indicates the file name so we can move the files once all downloads complete.
-
-## Consider implementing OTP with the GitHub seed to be able to derive 2FA code
-
-If successful, this sript can be made fully automatic.
 
 ## Follow along with the headless download issue
 
