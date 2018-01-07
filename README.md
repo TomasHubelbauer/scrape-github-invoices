@@ -11,23 +11,32 @@ Obviously a dedicated API would be much more straightforward and much less error
 **Features:**
 
 - Download all invoices to the Downloads directory
-- ([In development](doc/tasks.md)) Sign in using user name, passphrase and 2 factor authentication is automatic
+- Sign in using user name, passphrase and 2 factor authentication is automatic
 - ([In development](doc/tasks.md)) Move invoices to a given directory after download has completed
 
 ## Running
 
-**Prerequisites:**
+| Prerequisite | Minimal Version | Optimal Version |
+|--------------|-----------------|-----------------|
+| NodeJS       | ?               | 9.0.3           |
+| Yarn         | ?               | 1.3.2           |
 
-- Node 9.0.3+
-- Yarn 1.0.0+
+Fill in your details in `secrets.mjs` or leave the fields empty in order to fill them in yourself
+(only in non-headless mode).
 
-```sh
-# Fill in your details or leave fields blank in order to type them in yourself
-echo "export default { userName: '', passphrase: '', totpSecret: '' }" > secrets.mjs # Git ignored
-yarn start
-# Enter the GitHub 2FA code
-# Find invoices in the Downloads directory
+```js
+export default {
+  userName: 'Tomas@Hubelbauer.net',
+  passphrase: '',
+  secret: ''
+}
 ```
+
+`secret` is a TOTP secret for GitHub 2FA. You can obtain it by going to GitHub profile settings page
+[for 2FA authentication](https://github.com/settings/two_factor_authentication/configure) and when a QA code
+is displayed, clicking through for a manual code entry. The code displayed in the popup is the desired value.
+
+Once set up, run `yarn start` and once the script completes, find the invoices in your Downloads directory.
 
 ## Licensing
 

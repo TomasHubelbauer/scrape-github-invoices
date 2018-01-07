@@ -6,10 +6,6 @@
 
 [The headless download GitHub issue](https://github.com/GoogleChrome/puppeteer/issues/299)
 
-This combined with automatic 2FA might make this usable as a `cron` job.
+## Require all credentials in headless mode, allow manual entry in non-headless mode
 
-## Do not submit the log in form with missing or blank `userName` or `passphrase`
-
-## Do not submit the 2FA token form with missing or blank `totpSecret`
-
-## Detail how to obtain the `totpSecret` value from GitHub
+## Document how to set this script up as a cron job

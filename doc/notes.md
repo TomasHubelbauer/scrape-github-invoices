@@ -2,6 +2,10 @@
 
 > Development log
 
+## 2017-01-07
+
+Finished 2FA TOTP sign in after [resolving the SpeakEasy issue](https://github.com/speakeasyjs/speakeasy/issues/102).
+
 ## 2017-01-07 continued
 
 Inspected how to approach redireting downloads to a specific directory.
