@@ -4,7 +4,7 @@ import secrets from './secrets';
 
 async function run() {
 	const headless = true;
-	const browser = await puppeteer.launch({ headless, slowMo: 20 });
+	const browser = await puppeteer.launch({ headless, slowMo: 10 });
 	const page = (await browser.pages())[0];
 	await page.goto('https://github.com/settings/billing');
 	console.log('Navigated to the login screen.');
@@ -22,7 +22,7 @@ async function run() {
 	await page.click('button[type=submit]');
 	console.log('Filled in the TOTP token.');
 
-	await page.waitForSelector('.billing-section');
+	await page.waitForSelector('.billing-section'); // This is AJAX navigation.
 	console.log('Entered the billing section.');
 
 	const downloadAs = await page.$$('.boxed-group-table > tbody > tr a');
