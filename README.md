@@ -1,5 +1,7 @@
 # Scrape GitHub Invoices
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/TomasHubelbauer/scrape-github-invoices.svg)](https://greenkeeper.io/)
+
 GitHub doesn't have an API for downloading invoices (as confirmed by GitHub support).
 
 This script uses Google's Puppeteer to fire up a Chromium instance, log you in and enumerate and download invoices
