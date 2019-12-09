@@ -42,9 +42,19 @@ Once set up, run `yarn start` and once the script completes, find the invoices i
 
 This project is licensed under the terms of the [MIT license](LICENSE.md).
 
-## Contributing
+## To-Do
 
-See [development plan](doc/tasks.md).
+### Follow along with headless download issue and then implement custom download directory
+
+https://github.com/GoogleChrome/puppeteer/issues/299
+
+### Require all credentials in headless mode, allow manual entry in non-headless mode
+
+### Document how to set this script up as a cron job
+
+### Integrate KeyChain Access on Mac to be able to avoid having the `secrets.mjs` file
+
+### Integrate Windows DP API to be able to avoid having the `secrets.mjs` file
 
 ## Studying
 
